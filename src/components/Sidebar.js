@@ -23,8 +23,8 @@ const Sidebar = () => {
     setModalState(false)
   }, [])
 
-  const projectData = () => {
-    axios.get(`${process.env.REACT_APP_SERVER}`)
+  const projectData = async () => {
+    await axios.get(`${process.env.REACT_APP_SERVER}/projects/`)
       .then((res) => {
         setProjects(res.data)
       })
